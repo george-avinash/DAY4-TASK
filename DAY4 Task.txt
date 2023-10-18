@@ -65,6 +65,85 @@ var o = [1,9,18,22,26,40,24];
 var n = [2,15,20,24,30,42,48];
 console.log(m(o,n));
 
+g)
+var arr = [1, 2, 2, 3, 4, 4, 5];
+var uniqueArr = (function(arr) {
+    var seen = {};
+    return arr.filter(function(item) {
+        return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+    });
+})(arr);
+console.log(uniqueArr);
+
+h)
+var arr = [1, 2, 3, 4, 5];
+var k = 2;
+var rotatedArray = (function(arr, k) {
+    k = k % arr.length; // Ensure k is within the array length
+    return arr.slice(-k).concat(arr.slice(0, arr.length - k));
+})(arr, k);
+console.log(rotatedArray);
+
+Print the programs in arrow function
+--------------------------------------
+
+a)
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const printOddNumbers = (arr) => {
+    arr.forEach((number) => {
+        if (number % 2 !== 0) {
+            console.log(number);
+        }
+    });
+};
+printOddNumbers(numbers);
+
+b)
+const stringArray = ["hello guys", "fun class today", "Thiru is mentor"];
+const convertToTitleCase = (arr) => {
+    return arr.map((str) => {
+        return str
+            .split(' ')
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    });
+};
+const titleCaseArray = convertToTitleCase(stringArray);
+console.log(titleCaseArray);
+
+c)
+const numberArray = [1, 2, 3, 4, 5];
+const sumOfNumbers = (arr) => arr.reduce((acc, num) => acc + num, 0);
+const totalSum = sumOfNumbers(numberArray);
+console.log(`Sum of all numbers: ${totalSum}`);
+
+d)
+const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+const isPrime = (num) => {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+  if (num % 2 === 0 || num % 3 === 0) return false;
+  let i = 5;
+  while (i * i <= num) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+    i += 6;
+  }
+  return true;
+};
+const primeNumbers = numbers.filter(isPrime);
+console.log("Prime numbers in the array:", primeNumbers);
+
+e)
+const strings = ["level", "hello", "world", "radar", "javascript"];
+const isPalindrome = (str) => {
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
+};
+const palindromeStrings = strings.filter(isPalindrome);
+console.log("Palindromes in the array:", palindromeStrings);
+
+
+
 
 
 
